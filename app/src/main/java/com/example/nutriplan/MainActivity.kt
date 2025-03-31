@@ -43,7 +43,17 @@ class MainActivity : ComponentActivity() {
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
                 Row {
-                    Button(onClick = { /*TODO*/ }) {
+                    Button(onClick = {
+                        meals= when(timeofday){
+                            "Morning" ->"Eggs & Toast"
+                            "Mid-Morning"->" Greek yogurt & berries "
+                            "Lunch" -> " Grilled cheese toast and tomato soup "
+                            "Afternoon"->" dried almonds and dark chocolate"
+                            "Dinner"->" Roasted beef with mash & veggies "
+                            "Evening snack"->"Herbal tea & biscuits"
+
+                            else -> "Invalid Time Of Day" }
+                    }) {
                         Text(text = " Meal Suggestions ")
                         
                     }
