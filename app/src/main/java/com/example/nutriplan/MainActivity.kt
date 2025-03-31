@@ -74,6 +74,9 @@ class MainActivity : ComponentActivity() {
                 Text(text = " Choose Meal Type ",
                     fontSize = 16.sp,
                     modifier = Modifier.align(Alignment.Start))
+
+
+
                 Row {
                     Button(onClick = {
                         meals= when(timeofday){
