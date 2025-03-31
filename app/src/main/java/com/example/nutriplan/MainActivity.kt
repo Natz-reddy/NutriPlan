@@ -59,8 +59,8 @@ class MainActivity : ComponentActivity() {
                     fontWeight = FontWeight.Black,
                     fontFamily = FontFamily.Monospace
                 )
-               Divider()
-                
+                Divider()
+
                 Spacer(modifier = Modifier.size(30.dp))
                 
                 OutlinedTextField(value = timeofday, onValueChange = { text ->
