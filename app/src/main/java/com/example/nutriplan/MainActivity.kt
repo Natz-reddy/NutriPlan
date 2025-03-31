@@ -65,6 +65,7 @@ class MainActivity : ComponentActivity() {
                 OutlinedTextField(value = timeofday, onValueChange = { text ->
                     timeofday = text
 
+
                 },
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
