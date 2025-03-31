@@ -85,6 +85,7 @@ class MainActivity : ComponentActivity() {
                                 "light"-> Color(0xFF81C784)
                                 else->Color.LightGray
                             })) {
+                        Text(text = " Light Meal ")
 
 
                     }
