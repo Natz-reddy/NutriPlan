@@ -77,44 +77,47 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.align(Alignment.Start ))
                 
                 Row {
-                   Button(onClick = {  }) {
-                       Text(text = "light meal")   
-                   }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    
-                    Button(onClick = { heavymeal }) {
-                      Text(text = "Heavy Meal")
+                    Button(onClick = { mealtype="light"},
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = when(mealtype){
+                                "light"-> Color(0xFF81C784)
+                                else->Color.LightGray
+                            })) {
+
+
                     }
 
-                }
 
-                Spacer(modifier = Modifier.height(16.dp))
-            }
+                }
                 Row {
                     Button(onClick = {
-                        meals= when(timeofday){
-                            "Morning" -> if  "Eggs & Toast" else "yogurt"
-                            "Mid-Morning"->" Greek yogurt & berries "
+                        meals = when (timeofday) {
+                            "Morning" -> "Eggs & Toast yogurt"
+                            "Mid-Morning" -> " Greek yogurt & berries "
                             "Lunch" -> " Grilled cheese toast and tomato soup "
-                            "Afternoon"->" dried almonds and dark chocolate"
-                            "Dinner"->" Roasted beef with mash & veggies "
-                            "Evening snack"->"Herbal tea & biscuits"
+                            "Afternoon" -> " dried almonds and dark chocolate"
+                            "Dinner" -> " Roasted beef with mash & veggies "
+                            "Evening snack" -> "Herbal tea & biscuits"
 
-                            else -> "Invalid Time Of Day" }
+                            else -> "Invalid Time Of Day"
+                        }
                     }) {
                         Text(text = " Meal Suggestions ")
-                        
+
                     }
 
-                Button(onClick = { timeofday=""
-                    meals=""}) {
-                    Text(text = " Reset ")
-                }
+                    Button(onClick = {
+                        timeofday = ""
+                        meals = ""
+                    }) {
+                        Text(text = " Reset ")
+                    }
                 }
 
-            Text(text = "Meal suggestion in $timeofday is : " )
+                Text(text = "Meal suggestion in $timeofday is : ")
                 Text(text = meals)
             }
         }
     }
+}
 
