@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -71,9 +72,16 @@ class MainActivity : ComponentActivity() {
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
                 Spacer(modifier = Modifier.height(20.dp))
+                Row {
+                    Alignment.CenterVertically
+
+
+                }
                 Text(text = " Choose Meal Type ",
                     fontSize = 16.sp,
                     modifier = Modifier.align(Alignment.Start))
+
+
 
 
 
