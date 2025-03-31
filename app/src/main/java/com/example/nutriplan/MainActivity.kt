@@ -53,7 +53,8 @@ class MainActivity : ComponentActivity() {
                     .background(Color(0xFFAAFFFF))
 
             ) {
-                Text(text = " Nutri Plan ",
+                Text(
+                    text = " Nutri Plan ",
                     fontSize = 35.sp,
                     fontWeight = FontWeight.Black,
                     fontFamily = FontFamily.Monospace
