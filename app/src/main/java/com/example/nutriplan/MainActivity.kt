@@ -41,15 +41,9 @@ class MainActivity : ComponentActivity() {
             var meals by remember {
                 mutableStateOf("")
             }
-            var mealtype by remember {
+            var lightmeal by remember {
                 mutableStateOf("")
             }
-
-
-
-
-
-
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -74,19 +68,11 @@ class MainActivity : ComponentActivity() {
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
                 Spacer(modifier = Modifier.height(20.dp))
-                Row {
-                    Alignment.CenterVertically
-
-
-                }
-                Text(text = " Choose Meal Type ",
-                    fontSize = 16.sp,
-                    modifier = Modifier.align(Alignment.Start))
-
-
-
-
-
+                    Text(
+                        text = " Choose Meal Type ",
+                        fontSize = 16.sp,
+                        modifier = Modifier.align(Alignment.Start ))
+            }
                 Row {
                     Button(onClick = {
                         meals= when(timeofday){
