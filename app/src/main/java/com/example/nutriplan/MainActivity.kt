@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
@@ -42,7 +43,10 @@ class MainActivity : ComponentActivity() {
                 mutableStateOf("")
             }
             var lightmeal by remember {
-                mutableStateOf("")
+                mutableStateOf("light meal")
+            }
+            var heavymeal by remember {
+                mutableStateOf("heavy meal")
             }
 
             Column(
