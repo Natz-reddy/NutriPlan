@@ -105,13 +105,33 @@ class MainActivity : ComponentActivity() {
 
                 Row {
                     Button(onClick = {
-                        meals = when (timeofday) {
-                            "Morning" -> "Eggs & Toast yogurt"
-                            "Mid-Morning" -> " Greek yogurt & berries "
-                            "Lunch" -> " Grilled cheese toast and tomato soup "
-                            "Afternoon" -> " dried almonds and dark chocolate"
-                            "Dinner" -> " Roasted beef with mash & veggies "
-                            "Evening snack" -> "Herbal tea & biscuits"
+                        meals = when (timeofday.lowercase()) {
+                            "morning" -> when (mealtype) {
+                                "light" -> "Oatmeal with fruits"
+                                else -> "Eggs & bacon"
+                            }
+                            "mid-morning" -> when (mealtype) {
+                                "light" -> "Greek yogurt"
+                                else -> "Yogurt with granola"
+                            }
+                            "lunch" -> when (mealtype) {
+                                "light" -> "Vegetable salad"
+                                else -> "Chicken with rice"
+                            }
+                            "afternoon" -> when (mealtype) {
+                                "light" -> "Fruit salad"
+                                else -> "Sandwich with soup"
+                            }
+                            "dinner" -> when (mealtype) {
+                                "light" -> "Grilled fish"
+                                else -> "Steak with potatoes"
+                            }
+                            "evening snack" -> when (mealtype) {
+                                "light" -> "Herbal tea"
+                                else -> "Toast with peanut butter"
+                            }
+
+
 
                             else -> "Invalid Time Of Day"
                         }
