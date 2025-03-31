@@ -42,10 +42,7 @@ class MainActivity : ComponentActivity() {
             var meals by remember {
                 mutableStateOf("")
             }
-            var lightmeal by remember {
-                mutableStateOf("light meal")
-            }
-            var heavymeal by remember {
+            var mealtype by remember {
                 mutableStateOf("heavy meal")
             }
 
@@ -74,25 +71,23 @@ class MainActivity : ComponentActivity() {
                 Spacer(modifier = Modifier.height(20.dp))
                 
                 Row {
-                   Button(onClick = { lightmeal }) {
+                   Button(onClick = {  }) {
                        Text(text = "light meal")   
                    }
                     Spacer(modifier = Modifier.width(8.dp))
                     
                     Button(onClick = { heavymeal }) {
-                      Text(text = "Heavy Meal")  
+                      Text(text = "Heavy Meal")
                     }
-                    
+
                 }
-                    Text(
-                        text = " Choose Meal Type ",
-                        fontSize = 16.sp,
-                        modifier = Modifier.align(Alignment.Start ))
+
+                Spacer(modifier = Modifier.height(16.dp))
             }
                 Row {
                     Button(onClick = {
                         meals= when(timeofday){
-                            "Morning" ->"Eggs & Toast"
+                            "Morning" -> if  "Eggs & Toast" else "yogurt"
                             "Mid-Morning"->" Greek yogurt & berries "
                             "Lunch" -> " Grilled cheese toast and tomato soup "
                             "Afternoon"->" dried almonds and dark chocolate"
