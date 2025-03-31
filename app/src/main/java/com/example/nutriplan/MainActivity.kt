@@ -86,21 +86,21 @@ class MainActivity : ComponentActivity() {
                                 else->Color.LightGray
                             })) {
                         Text(text = " Light Meal ")
-
-
                     }
-
-
-                }
-                Row {
-                    Button(onClick = { mealtype="Heavy"},
+                    Button(onClick = { mealtype="Heavy" },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = when(mealtype){
-                                "Heavy"-> Color(0xFF81C784)
+                                "heavy"->Color(0xFF81C784)
                                 else->Color.LightGray
-                            })) {
-                        Text(text = " Heavy Meal ")
+                            }
+                        )) {
 
+                    }
+                    Text(text = "Heavy meal")
+
+                }
+
+                }
 
                 Row {
                     Button(onClick = {
@@ -132,5 +132,5 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
+
 
