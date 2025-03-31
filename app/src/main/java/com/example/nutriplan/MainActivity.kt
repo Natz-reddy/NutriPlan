@@ -53,9 +53,9 @@ class MainActivity : ComponentActivity() {
 
             ) {
                 Text(text = " Nutri Plan ",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Default
+                    fontSize = 35.sp,
+                    fontWeight = FontWeight.Black,
+                    fontFamily = FontFamily.Monospace
                 )
                Divider()
                 
