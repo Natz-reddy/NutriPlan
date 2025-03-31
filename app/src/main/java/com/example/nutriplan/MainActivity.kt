@@ -57,6 +57,11 @@ class MainActivity : ComponentActivity() {
                         Text(text = " Meal Suggestions ")
                         
                     }
+
+                Button(onClick = { timeofday=""
+                    meals=""}) {
+                    Text(text = " Reset ")
+                }
                 }
 
             }
