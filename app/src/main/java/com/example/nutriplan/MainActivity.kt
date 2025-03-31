@@ -68,6 +68,12 @@ class MainActivity : ComponentActivity() {
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
                 Spacer(modifier = Modifier.height(20.dp))
+                Row {
+                   Button(onClick = { lightmeal }) {
+                       
+                   }
+                    Text(text = "light meal")
+                }
                     Text(
                         text = " Choose Meal Type ",
                         fontSize = 16.sp,
