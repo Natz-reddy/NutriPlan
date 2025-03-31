@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
                 Divider()
 
                 Spacer(modifier = Modifier.size(30.dp))
-                
+
                 OutlinedTextField(value = timeofday, onValueChange = { text ->
                     timeofday = text
 
