@@ -75,8 +75,9 @@ class MainActivity : ComponentActivity() {
                 Text(
                     text = " Choose Meal Type ",
                     fontSize = 16.sp,
-                    modifier = Modifier.align(Alignment.Start ))
-                
+                    modifier = Modifier.align(Alignment.Start)
+                )
+
                 Row {
                     Button(onClick = { mealtype="light"},
                         colors = ButtonDefaults.buttonColors(
