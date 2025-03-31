@@ -93,6 +93,16 @@ class MainActivity : ComponentActivity() {
 
                 }
                 Row {
+                    Button(onClick = { mealtype="Heavy"},
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = when(mealtype){
+                                "Heavy"-> Color(0xFF81C784)
+                                else->Color.LightGray
+                            })) {
+                        Text(text = " Heavy Meal ")
+
+
+                Row {
                     Button(onClick = {
                         meals = when (timeofday) {
                             "Morning" -> "Eggs & Toast yogurt"
