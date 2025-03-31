@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
@@ -50,7 +51,8 @@ class MainActivity : ComponentActivity() {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                .fillMaxSize().background(Color(0xFFAAFFFF))
+                    .fillMaxSize()
+                    .background(Color(0xFFAAFFFF))
 
             ) {
                 Text(text = " Nutri Plan ",
@@ -68,6 +70,10 @@ class MainActivity : ComponentActivity() {
                 },
                     placeholder = { Text(text = "Enter the time of day ") }
                 )
+                Spacer(modifier = Modifier.height(20.dp))
+                Text(text = " Choose Meal Type ",
+                    fontSize = 16.sp,
+                    modifier = Modifier.align(Alignment.Start))
                 Row {
                     Button(onClick = {
                         meals= when(timeofday){
