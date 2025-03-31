@@ -64,6 +64,8 @@ class MainActivity : ComponentActivity() {
                 }
                 }
 
+            Text(text = "Meal suggestion in $timeofday is : " )
+
             }
         }
     }
