@@ -37,6 +37,9 @@ class MainActivity : ComponentActivity() {
             var meals by remember {
                 mutableStateOf("")
             }
+            var mealtype by remember {
+                mutableStateOf("")
+            }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
