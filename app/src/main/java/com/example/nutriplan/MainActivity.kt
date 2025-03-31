@@ -23,6 +23,9 @@ class MainActivity : ComponentActivity() {
             var timeofday by remember {
                 mutableStateOf("")
             }
+            var meals by remember {
+                mutableStateOf("")
+            }
         }
     }
 }
