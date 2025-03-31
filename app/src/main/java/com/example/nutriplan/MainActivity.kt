@@ -50,13 +50,13 @@ class MainActivity : ComponentActivity() {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                .fillMaxSize().background(Color(0xFF434442))
+                .fillMaxSize().background(Color(0xFFAAFFFF))
 
             ) {
                 Text(text = " Nutri Plan ",
                     fontSize = 30.sp,
                     fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Serif
+                    fontFamily = FontFamily.Default
                 )
                Divider()
                 
