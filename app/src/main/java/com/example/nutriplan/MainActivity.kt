@@ -74,9 +74,14 @@ class MainActivity : ComponentActivity() {
                 Spacer(modifier = Modifier.height(20.dp))
                 Row {
                    Button(onClick = { lightmeal }) {
-                       
+                       Text(text = "light meal")   
                    }
-                    Text(text = "light meal")
+                    Spacer(modifier = Modifier.width(8.dp))
+                    
+                    Button(onClick = { heavymeal }) {
+                      Text(text = "Heavy Meal")  
+                    }
+                    
                 }
                     Text(
                         text = " Choose Meal Type ",
