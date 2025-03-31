@@ -101,6 +101,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 }
+            Spacer(modifier = Modifier.height(20.dp))
 
                 Row {
                     Button(onClick = {
