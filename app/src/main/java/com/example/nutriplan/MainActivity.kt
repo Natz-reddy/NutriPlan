@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -74,9 +75,9 @@ class MainActivity : ComponentActivity() {
 
                 Text(
                     text = " Choose Meal Type ",
-                    fontSize = 16.sp,
-                    modifier = Modifier.align(Alignment.Start)
+                    fontSize = 16.sp
                 )
+
                 Row {
                     Button(
                         onClick = { mealtype = "light" },
@@ -87,11 +88,10 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     ) {
-                        Text(text = " Light Meal ")
-                        Spacer(modifier =Modifier.height(20.dp) )
+                        Text("Light Meal")
                     }
                     Button(
-                        onClick = { mealtype = "Heavy" },
+                        onClick = { mealtype = "heavy" },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = when (mealtype) {
                                 "heavy" -> Color(0xFF81C784)
@@ -99,13 +99,12 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     ) {
-                        Text(text = "Heavy meal")
+                        Text("Heavy Meal")
                     }
-
-Divider()
-                    Spacer(modifier = Modifier.height(20.dp))
+                }
 
                     Row {
+
                         Button(onClick = {
                             meals = when (timeofday.lowercase()) {
                                 "morning" -> when (mealtype) {
@@ -159,8 +158,6 @@ Divider()
                         }
 
 
-
-
                     }
                     Column {
                         Text(text = "Meal suggestion in $timeofday is : ")
@@ -170,6 +167,7 @@ Divider()
             }
         }
     }
-}
+
+
 
 
