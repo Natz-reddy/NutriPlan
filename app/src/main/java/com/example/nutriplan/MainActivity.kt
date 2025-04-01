@@ -77,7 +77,6 @@ class MainActivity : ComponentActivity() {
                     fontSize = 16.sp,
                     modifier = Modifier.align(Alignment.Start)
                 )
-
                 Row {
                     Button(
                         onClick = { mealtype = "light" },
@@ -89,6 +88,7 @@ class MainActivity : ComponentActivity() {
                         )
                     ) {
                         Text(text = " Light Meal ")
+                        Spacer(modifier =Modifier.height(20.dp) )
                     }
                     Button(
                         onClick = { mealtype = "Heavy" },
@@ -102,69 +102,71 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Heavy meal")
                     }
 
+Divider()
+                    Spacer(modifier = Modifier.height(20.dp))
 
-                }
+                    Row {
+                        Button(onClick = {
+                            meals = when (timeofday.lowercase()) {
+                                "morning" -> when (mealtype) {
+                                    "light" -> "Oatmeal with fruits"
+                                    else -> "Eggs & bacon"
+                                }
 
-            }
-            Spacer(modifier = Modifier.height(20.dp))
+                                "mid-morning" -> when (mealtype) {
+                                    "light" -> "Greek yogurt"
+                                    else -> "Yogurt with granola"
+                                }
 
-            Row {
-                Button(onClick = {
-                    meals = when (timeofday.lowercase()) {
-                        "morning" -> when (mealtype) {
-                            "light" -> "Oatmeal with fruits"
-                            else -> "Eggs & bacon"
+                                "lunch" -> when (mealtype) {
+                                    "light" -> "Vegetable salad"
+                                    else -> "Chicken with rice"
+                                }
+
+                                "afternoon" -> when (mealtype) {
+                                    "light" -> "Fruit salad"
+                                    else -> "Sandwich with soup"
+                                }
+
+                                "dinner" -> when (mealtype) {
+                                    "light" -> "Grilled fish"
+                                    else -> "Steak with potatoes"
+                                }
+
+                                "evening snack" -> when (mealtype) {
+                                    "light" -> "Herbal tea"
+                                    else -> "Toast with peanut butter"
+                                }
+
+                                else -> "Invalid Time Of Day"
+                            }
+                        }) {
+                            Text(text = " Meal Suggestions ")
+
                         }
 
-                        "mid-morning" -> when (mealtype) {
-                            "light" -> "Greek yogurt"
-                            else -> "Yogurt with granola"
+                        Button(
+                            onClick = {
+                                timeofday = ""
+                                meals = ""
+                                mealtype = "Light"
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFFEF5350)
+                            )
+                        ) {
+                            Text("Reset")
                         }
 
-                        "lunch" -> when (mealtype) {
-                            "light" -> "Vegetable salad"
-                            else -> "Chicken with rice"
-                        }
 
-                        "afternoon" -> when (mealtype) {
-                            "light" -> "Fruit salad"
-                            else -> "Sandwich with soup"
-                        }
 
-                        "dinner" -> when (mealtype) {
-                            "light" -> "Grilled fish"
-                            else -> "Steak with potatoes"
-                        }
 
-                        "evening snack" -> when (mealtype) {
-                            "light" -> "Herbal tea"
-                            else -> "Toast with peanut butter"
-                        }
-
-                        else -> "Invalid Time Of Day"
                     }
-                }) {
-                    Text(text = " Meal Suggestions ")
-
+                    Column {
+                        Text(text = "Meal suggestion in $timeofday is : ")
+                        Text(text = meals)
+                    }
                 }
-
-                Button(
-                    onClick = {
-                        timeofday = ""
-                        meals = ""
-                        mealtype = "Light"
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFEF5350)
-                    )
-                ) {
-                    Text("Reset")
-                }
-
-
-
-                Text(text = "Meal suggestion in $timeofday is : ")
-                Text(text = meals)
             }
         }
     }
