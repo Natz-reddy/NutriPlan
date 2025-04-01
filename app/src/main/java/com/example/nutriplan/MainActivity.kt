@@ -3,6 +3,7 @@ package com.example.nutriplan
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -49,11 +51,12 @@ class MainActivity : ComponentActivity() {
                 mutableStateOf("heavy meal")
             }
 
+            
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(0xFF005757))
+                    .background(Color(0xFF2E3131))
 
             ) {
                 Text(
@@ -133,12 +136,12 @@ class MainActivity : ComponentActivity() {
                                     else -> "Yogurt with granola"
                                 }
 
-                                "lunch" -> when (mealtype) {
+                                "lunch"-> when (mealtype) {
                                     "light" -> "Vegetable salad"
                                     else -> "Chicken with rice"
                                 }
 
-                                "afternoon" -> when (mealtype) {
+                                "afternoon snack" -> when (mealtype) {
                                     "light" -> "Fruit salad"
                                     else -> "Sandwich with soup"
                                 }
@@ -182,13 +185,17 @@ class MainActivity : ComponentActivity() {
                             fontSize = 16.sp,
                             fontFamily = FontFamily.Monospace,
                             fontWeight = FontWeight.Black,
-                            modifier = Modifier.align(Alignment.Start).fillMaxWidth())
+                            modifier = Modifier
+                                .align(Alignment.Start)
+                                .fillMaxWidth())
                         Text(text = meals,
                             color = Color.Black,
                             fontSize = 16.sp,
                             fontFamily = FontFamily.Monospace,
                             fontWeight = FontWeight.Black,
-                            modifier = Modifier.align(Alignment.Start).fillMaxWidth())
+                            modifier = Modifier
+                                .align(Alignment.Start)
+                                .fillMaxWidth())
 
                     }
                 }
