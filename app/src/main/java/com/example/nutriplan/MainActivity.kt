@@ -89,7 +89,9 @@ class MainActivity : ComponentActivity() {
                         )
                     ) {
                         Text("Light Meal")
+
                     }
+                    Spacer(modifier = Modifier.width(30.dp))
                     Button(
                         onClick = { mealtype = "heavy" },
                         colors = ButtonDefaults.buttonColors(
@@ -102,7 +104,7 @@ class MainActivity : ComponentActivity() {
                         Text("Heavy Meal")
                     }
                 }
-
+                Spacer(modifier = Modifier.size(30.dp))
                     Row {
 
                         Button(onClick = {
@@ -143,7 +145,7 @@ class MainActivity : ComponentActivity() {
                             Text(text = " Meal Suggestions ")
 
                         }
-
+                        Spacer(modifier = Modifier.width(50.dp))
                         Button(
                             onClick = {
                                 timeofday = ""
@@ -162,6 +164,7 @@ class MainActivity : ComponentActivity() {
                     Column {
                         Text(text = "Meal suggestion in $timeofday is : ")
                         Text(text = meals)
+
                     }
                 }
             }
