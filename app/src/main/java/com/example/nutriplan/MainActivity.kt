@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(0xFFAAFFFF))
+                    .background(Color(0xFF005757))
 
             ) {
                 Text(
@@ -99,9 +99,9 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     ) {
-
+                        Text(text = "Heavy meal")
                     }
-                    Text(text = "Heavy meal")
+
 
                 }
 
