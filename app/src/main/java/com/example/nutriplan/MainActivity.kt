@@ -7,9 +7,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -69,18 +71,21 @@ class MainActivity : ComponentActivity() {
 
 
                 },
-                    placeholder = { Text(text = "Enter the time of day ") }
+                    placeholder = { Text(text = "Enter the time of day ",
+                        color = Color.Black) }
                 )
                 Spacer(modifier = Modifier.height(20.dp))
 
                 Text(
                     text = " Choose Meal Type ",
-                    fontSize = 16.sp
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily.Monospace,
+                    fontWeight = FontWeight.Black
                 )
 
                 Row {
                     Button(
-                        onClick = { mealtype = "light" },
+                        onClick = { mealtype = "light"},
                         colors = ButtonDefaults.buttonColors(
                             containerColor = when (mealtype) {
                                 "light" -> Color(0xFF81C784)
@@ -88,10 +93,15 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     ) {
-                        Text("Light Meal")
+                        Text("Light Meal",
+                            color = Color.Black,
+                            fontSize = 13.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Black
+                            )
 
                     }
-                    Spacer(modifier = Modifier.width(30.dp))
+                    Spacer(modifier = Modifier.width(12.dp))
                     Button(
                         onClick = { mealtype = "heavy" },
                         colors = ButtonDefaults.buttonColors(
@@ -101,7 +111,11 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     ) {
-                        Text("Heavy Meal")
+                        Text("Heavy Meal",
+                                color = Color.Black,
+                            fontSize = 13.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Bold)
                     }
                 }
                 Spacer(modifier = Modifier.size(30.dp))
@@ -142,10 +156,11 @@ class MainActivity : ComponentActivity() {
                                 else -> "Invalid Time Of Day"
                             }
                         }) {
-                            Text(text = " Meal Suggestions ")
+                            Text(text = " Meal Suggestions "
+                                )
 
                         }
-                        Spacer(modifier = Modifier.width(50.dp))
+                        Spacer(modifier = Modifier.width(220.dp))
                         Button(
                             onClick = {
                                 timeofday = ""
@@ -162,8 +177,18 @@ class MainActivity : ComponentActivity() {
 
                     }
                     Column {
-                        Text(text = "Meal suggestion in $timeofday is : ")
-                        Text(text = meals)
+                        Text(text = "Meal suggestion in $timeofday is : ",
+                            color = Color.Black,
+                            fontSize = 16.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Black,
+                            modifier = Modifier.align(Alignment.Start).fillMaxWidth())
+                        Text(text = meals,
+                            color = Color.Black,
+                            fontSize = 16.sp,
+                            fontFamily = FontFamily.Monospace,
+                            fontWeight = FontWeight.Black,
+                            modifier = Modifier.align(Alignment.Start).fillMaxWidth())
 
                     }
                 }
