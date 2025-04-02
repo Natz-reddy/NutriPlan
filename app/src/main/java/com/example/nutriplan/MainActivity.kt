@@ -126,7 +126,7 @@ class MainActivity : ComponentActivity() {
 
                         Button(onClick = {
                             meals = when (timeofday.lowercase()) {
-                                "morning" -> when (mealtype) {
+                                "breakfast" -> when (mealtype) {
                                     "light" -> "Oatmeal with fruits"
                                     else -> "Eggs & bacon"
                                 }
@@ -156,7 +156,7 @@ class MainActivity : ComponentActivity() {
                                     else -> "Toast with peanut butter"
                                 }
 
-                                else -> "Invalid Time Of Day"
+                                else -> "Invalid Time Of Day, Please try again"
                             }
                         }) {
                             Text(text = " Meal Suggestions "
