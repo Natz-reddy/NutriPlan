@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
             ) {
                 Text(
                     text = " Nutri Plan ",
-                    fontSize = 35.sp,
+                    fontSize = 45.sp,
                     fontWeight = FontWeight.Black,
                     fontFamily = FontFamily.Monospace
                 )
