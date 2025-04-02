@@ -41,58 +41,58 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            // state variables to store user inputs and selections
             var timeofday by remember {
-                mutableStateOf("")
+                mutableStateOf("")// stores time of day (e.g., breakfast, lunch)
             }
             var meals by remember {
                 mutableStateOf("")
             }
             var mealtype by remember {
-                mutableStateOf("heavy meal")
+                mutableStateOf("heavy meal")// stores meal type (light/heavy), defaults to heavy
             }
 
-            
+            // column layout that contains all elements
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.CenterHorizontally,// center aligns the elements horizontally
                 modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0xFF2E3131))
+                    .fillMaxSize()// this takes up all the availabale space
+                    .background(Color(0xFF2E3131))//sets the background color
 
             ) {
+                // the app title
                 Text(
                     text = " Nutri Plan ",
-                    fontSize = 45.sp,
+                    fontSize = 45.sp,// font size
                     fontWeight = FontWeight.Black,
                     fontFamily = FontFamily.Monospace
                 )
-                Divider()
+                Divider()// adds a horizontal divider line
 
-                Spacer(modifier = Modifier.size(30.dp))
+                Spacer(modifier = Modifier.size(30.dp)) // this adds vertical space
 
-                OutlinedTextField(value = timeofday, onValueChange = { text ->
-                    timeofday = text
-
-
-                },
+                OutlinedTextField(value = timeofday, onValueChange = { text -> //text field to enter time of day
+                    timeofday = text//this updates the time of day when the text changes
+                     },
                     placeholder = { Text(text = "Enter eg.breakfast/afternoon snack/dinner ",
                         color = Color.Black) }
                 )
-                Spacer(modifier = Modifier.height(20.dp))
-
+                Spacer(modifier = Modifier.height(20.dp))//adds vertical space
+                    //title for meal type
                 Text(
                     text = " Choose Meal Type ",
                     fontSize = 16.sp,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Black
                 )
-
+                    //row containing the meal types eg. light/heavy
                 Row {
                     Button(
-                        onClick = { mealtype = "light"},
+                        onClick = { mealtype = "light"},//sets the button to light when clicked
                         colors = ButtonDefaults.buttonColors(
                             containerColor = when (mealtype) {
-                                "light" -> Color(0xFF81C784)
-                                else -> Color.LightGray
+                                "light" -> Color(0xFF81C784)//turns green when selected
+                                else -> Color.LightGray//turns gray when selected
                             }
                         )
                     ) {
@@ -104,7 +104,7 @@ class MainActivity : ComponentActivity() {
                             )
 
                     }
-                    Spacer(modifier = Modifier.width(12.dp))
+                    Spacer(modifier = Modifier.width(12.dp))//space horizontal
                     Button(
                         onClick = { mealtype = "heavy" },
                         colors = ButtonDefaults.buttonColors(
@@ -121,17 +121,18 @@ class MainActivity : ComponentActivity() {
                             fontWeight = FontWeight.Bold)
                     }
                 }
-                Spacer(modifier = Modifier.size(30.dp))
+                Spacer(modifier = Modifier.size(30.dp))//adds vertical space
+                //row containing action of buttons
                     Row {
-
+//this button genertaes the meals suggestions
                         Button(onClick = {
-                            meals = when (timeofday.lowercase()) {
+                            meals = when (timeofday.lowercase()) {//case insensitive
                                 "breakfast" -> when (mealtype) {
                                     "light" -> "Oatmeal with fruits"
                                     else -> "Eggs & bacon"
                                 }
 
-                                "mid-morning" -> when (mealtype) {
+                                "mid-morning" -> when (mealtype) {//when light or heavy is selected the display will only show certian suggestions
                                     "light" -> "Greek yogurt"
                                     else -> "Yogurt with granola"
                                 }
@@ -156,22 +157,22 @@ class MainActivity : ComponentActivity() {
                                     else -> "Toast with peanut butter"
                                 }
 
-                                else -> "Invalid Time Of Day, Please try again"
+                                else -> "Invalid Time Of Day, Please try again"// default message for invalid input
                             }
                         }) {
                             Text(text = " Meal Suggestions "
                                 )
 
                         }
-                        Spacer(modifier = Modifier.width(220.dp))
-                        Button(
+                        Spacer(modifier = Modifier.width(220.dp))//space betweeen buttons
+                        Button(//resets all inuput/clears all input
                             onClick = {
                                 timeofday = ""
                                 meals = ""
                                 mealtype = "Light"
                             },
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color(0xFFEF5350)
+                                containerColor = Color(0xFFEF5350)//reset button is red
                             )
                         ) {
                             Text("Reset")
@@ -179,6 +180,7 @@ class MainActivity : ComponentActivity() {
 
 
                     }
+                //column to display the meal suggestions
                     Column {
                         Text(text = "Meal suggestion in $timeofday is : ",
                             color = Color.Black,
@@ -186,9 +188,9 @@ class MainActivity : ComponentActivity() {
                             fontFamily = FontFamily.Monospace,
                             fontWeight = FontWeight.Black,
                             modifier = Modifier
-                                .align(Alignment.Start)
+                                .align(Alignment.Start)//this makes the text go to the left
                                 .fillMaxWidth())
-                        Text(text = meals,
+                        Text(text = meals,// the actual meal suggestion text
                             color = Color.Black,
                             fontSize = 16.sp,
                             fontFamily = FontFamily.Monospace,
