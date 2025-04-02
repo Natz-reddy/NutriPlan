@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity() {
 
 
                 },
-                    placeholder = { Text(text = "Enter the time of day ",
+                    placeholder = { Text(text = "Enter eg.breakfast/afternoon snack/dinner ",
                         color = Color.Black) }
                 )
                 Spacer(modifier = Modifier.height(20.dp))
