@@ -165,7 +165,7 @@ class MainActivity : ComponentActivity() {
 
                         }
                         Spacer(modifier = Modifier.width(220.dp))//space betweeen buttons
-                        Button(//resets all inuput/clears all input
+                        Button(//resets all input/clears all input
                             onClick = {
                                 timeofday = ""
                                 meals = ""
